@@ -2,7 +2,9 @@
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 	<?php 
 		$_GET['titlePage'] = 'Contactez-nous';
-		$_GET['descPage'] = 'N\'hésitez pas à nous contacter pour avoir plus d\'informations sur le relooking de meubles Bubu Déco';
+		$_GET['descPage'] = 'N\'hésitez pas à nous contacter pour avoir plus d\'informations sur le relooking de meubles Bubu Déco et la décoration de votre intérieur';
+		$_GET['keyPage'] = 'contactez-nous, Bubu Déco, relooking de meubles, décorez votre intérieur, 59113, Seclin';
+		$_GET['canonicalPage'] = '/contact.php';
 		include("components/header.php");
 	?>
 	

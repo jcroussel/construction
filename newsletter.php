@@ -1,8 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 	<?php 
-		$_GET['titlePage'] = 'Newsletter';
-		$_GET['descPage'] = 'N\'hésitez pas à vous inscrire à la newsletter sur le relooking de meubles Bubu Déco';
+		$_GET['titlePage'] = 'Inscription newsletter';
+		$_GET['descPage'] = 'N\'hésitez pas à vous inscrire à la newsletter afin d\'en savoir plus sur le relooking de meubles Bubu Déco et la vente d\'objets personnalisés';
+		$_GET['keyPage'] = 'inscription, newsletter, Bubu Déco, objets personnalisés, meubles en bois relookés, décorez votre intérieur, 59113, Seclin';
+		$_GET['canonicalPage'] = '/newsletter.php';
 		include("components/header.php");
 	?>
 	
