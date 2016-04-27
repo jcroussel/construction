@@ -76,6 +76,7 @@ $nom     = (isset($_POST['nom']))     ? Rec($_POST['nom'],true)     : '';
 $email   = (isset($_POST['email']))   ? Rec($_POST['email'],true)   : '';
 $objet   = (isset($_POST['objet']))   ? Rec($_POST['objet'],true)   : '';
 $message = (isset($_POST['message'])) ? Rec($_POST['message'],false) : '';
+$newsletter = (isset($_POST['newsletter'])) ? $_POST['newsletter'] : '';
  
 // On va vérifier les variables et l'email ...
 $email = (IsEmail($email)) ? $email : ''; // soit l'email est vide si erroné, soit il vaut l'email entré
@@ -119,6 +120,19 @@ if (isset($_POST['envoi']))
 				$num_emails++;
 		}
 		
+		if ( $newsletter == "on") {
+			$list = array (
+		   		array($nom, $email)
+			);
+
+			$fp = fopen('data/newsletter.csv', 'a');
+
+			foreach ($list as $fields) {
+				fputcsv($fp, $fields,";");
+			}
+
+			fclose($fp);
+		}
 		
 		echo '<p>'.$message_envoye.'</p>';
 		echo '<a href="/" class="button"><i class="fa fa-angle-right"></i> Retour à l\'accueil</a>';
@@ -149,6 +163,9 @@ if (($err_formulaire) || (!isset($_POST['envoi'])))
     		<p><input type="text" id="objet" name="objet" tabindex="3" placeholder="Votre objet*" value="<?php echo $objet; ?>" /></p>
     		<p><textarea id="message" name="message" tabindex="4" cols="30" rows="8" placeholder="Votre message*"><?php echo $message; ?></textarea></p>
     	</fieldset>
+    	<div class="field">
+    		<input type="checkbox" id="newsletter" name="newsletter" /><label for="newsletter">Je souhaite m'inscrire à la newsletter</label>
+    	</div>
      
     	<div><input type="submit" name="envoi" class="button" value="Envoyer" /></div>
     </form>

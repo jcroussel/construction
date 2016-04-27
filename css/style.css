@@ -327,9 +327,9 @@
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
-			font-weight: 300;
 			padding-left: 2.4em;
 			padding-right: 0.75em;
+			padding-top:0.3em;
 			position: relative;
 		}
 
@@ -360,13 +360,13 @@
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			color: #ff7496;
+			color: #9f6630;
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #ff7496;
+			border-color: #9f6630;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -658,7 +658,7 @@
 			pointer-events: none;
 			opacity: 0.5;
 		}
-
+		
 /* Main */
 
 	#main {
@@ -680,7 +680,7 @@
 		-ms-transform: rotateX(0deg);
 		transform: rotateX(0deg);
 	}
-
+	
 /* Header */
 
 	header {
@@ -839,3 +839,11 @@
 		body.is-ie #wrapper {
 			height: 100%;
 		}
+
+/* Content */
+
+@media screen and (max-width: 480px) {
+	.fb-page {
+		margin:0 -3em;
+	}
+}

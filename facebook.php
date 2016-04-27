@@ -22,7 +22,7 @@
 				  fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));</script>
 				
-				<div class="fb-page" data-href="https://www.facebook.com/Bubu-D&#xe9;co-630107567136751/" data-tabs="timeline" data-width="1500" data-height="1700" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"></div>
+				<div class="fb-page" data-href="https://www.facebook.com/Bubu-D&#xe9;co-630107567136751/" data-tabs="timeline" data-height="500" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"></div>
 				
 			</section>
 
