@@ -19,6 +19,7 @@
 	<head>
 		<title><?php echo $title ?> | Bubu Déco</title>
 		<meta name="charset" content="utf-8"/>
+		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0" />
 		<meta name="description" content="<?php echo $desc ?>" />
 		<meta name="keywords" content="<?php echo $keywords ?>" >

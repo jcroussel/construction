@@ -1,8 +1,14 @@
+<?php
+	if ( $_SERVER['REQUEST_URI'] == "/index.php" ) {
+		header("Status: 301 Moved Permanently", false, 301);
+		header("Location: http://www.bubudeco.fr/");
+		exit();
+	}
+?>
 <!DOCTYPE HTML>
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 	<?php include("components/header.php"); ?>
 	<body class="is-loading">
-
 		<!-- Wrapper -->
 		<div id="wrapper">
 
