@@ -11,7 +11,7 @@
 		if(isset($_GET['keyPage'])) {
 			$keywords = $_GET['keyPage'];
 		}
-		$canonical = '/';
+		$canonical = '';
 		if(isset($_GET['canonicalPage'])) {
 			$canonical = $_GET['canonicalPage'];
 		}
@@ -27,7 +27,7 @@
 		<meta content="index,follow" name="robots">
 		<link rel="alternate" hreflang="fr" href="http://www.bubudeco.fr/" />
 		<link rel="shortcut icon" type="image/x-icon" media="all" href="images/favicon.ico" />
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="css/style.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
