@@ -8,31 +8,29 @@
 			<!-- Main -->
 			<section id="main">
 				<?php include("components/top.php"); ?>
-				
-				<div>
-					<p>Vous souhaitez aménager votre intérieur ou relooker vos meubles ?<br />Aidez-nous dans notre projet en répondant à notre questionnaire en 3 minutes.</p>
-					<ul class="actions">
-						<li><a href="/form.php" class="button"><i class="fa fa-angle-right"></i> Répondre au questionnaire</a></li>
-					</ul>
-					<p>Le site Bubu Déco est en construction.<br />En attendant, suivez-nous sur Facebook.</p>
-					<ul class="icons">
-						<li><a href="https://www.facebook.com/Bubu-Déco-630107567136751/" title="Facebook" target="_blank" class="fa-facebook">Facebook</a></li>
-						<li><a href="/contact.php" title="Contact" class="fa-envelope">Contact</a></li>
-					</ul>
-					<ul class="real">
-						<li><img src="images/meuble-bar.jpg" alt="Relooking d'un bar" /></li>
-						<li><img src="images/palette-etagere.jpg" alt="Réalisation d'une étagère avec une palette" /></li>
-						<li><img src="images/meuble-commode.jpg" alt="Relooking d'une commode en bois brut" /></li>
-					</ul>
-				</div>
-				
-			</section>
 
-			<?php include("components/footer.php"); ?>
+                <div class="content" id="home">
+                    <p>Vous souhaitez relooker vos meubles ou avoir de la vaisselle en porcelaine personnalisés ?</p>
+                    <p>Aidez-nous dans notre projet en répondant à notre questionnaire en 3 minutes.</p>
+                    <ul class="actions">
+                        <li><a href="/form.html" class="button"><i class="fa fa-angle-right"></i> Répondre au questionnaire</a></li>
+                    </ul>
+                    <div class="row">
+                        <ul class="gallery">
+                            <li class="homeRea"><a href="/realisations.html" title="">Réalisations</a></li>
+                            <li><a href="/newsletter.html" title="">Inscription à la newsletter</a></li>
+                            <li><a href="/contact.html" title="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-		</div>
+            </section>
 
-		<?php include("components/scriptFooter.php"); ?>
-		
-	</body>
+            <?php include("components/footer.php"); ?>
+
+        </div>
+
+        <?php include("components/scriptFooter.php"); ?>
+
+    </body>
 </html>

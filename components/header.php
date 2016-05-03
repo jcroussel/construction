@@ -8,7 +8,7 @@
 	if(isset($_GET['titlePage'])) {
 		$title = $_GET['titlePage'];
 	}
-	$desc = 'Bubu Déco vous propose des objets personnalisés : vaisselles en porcelaine, verres, meubles en bois relookés et de décorez votre intérieur avec les meubles relookés par Bubu Déco (59113, Seclin)';
+	$desc = 'Bubu Déco vous propose des objets personnalisés : vaisselles en porcelaine, verres et de décorer votre intérieur avec les meubles relookés par Bubu Déco (59113, Seclin)';
 	if(isset($_GET['descPage'])) {
 		$desc = $_GET['descPage'];
 	}
@@ -40,5 +40,10 @@
 	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 	<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+	<script src="http://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" media="screen" />
+	<script src="js/functions.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
 </head>

@@ -7,16 +7,17 @@
 					'/newsletter.html');
 	include("components/header.php");
 ?>
-	<body class="is-loading">
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+<body class="is-loading">
 
-			<!-- Main -->
-			<section id="main">
-				<?php include("components/top.php"); ?>
-				
-				<div>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main">
+			<?php include("components/top.php"); ?>
+			
+			<div>
 
 
 <?php

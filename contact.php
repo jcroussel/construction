@@ -8,16 +8,16 @@
 	include("components/header.php");
 ?>
 	
-	<body class="is-loading">
+<body class="is-loading">
 
-		<!-- Wrapper -->
-		<div id="wrapper">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-			<!-- Main -->
-			<section id="main">
-				<?php include("components/top.php"); ?>
-				
-				<div>
+		<!-- Main -->
+		<section id="main">
+			<?php include("components/top.php"); ?>
+			
+			<div>
 
 
 <?php
