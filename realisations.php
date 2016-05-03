@@ -1,22 +1,17 @@
 <!DOCTYPE HTML>
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
     <?php
-    $_GET['titlePage'] = 'Réalisations';
-    $_GET['descPage'] = 'Retrouvez toutes les réalisations de Bubu Déco : relooking meubles, peinture sur porcelaine...';
-    $_GET['keyPage'] = 'réalisations, Bubu Déco, relooking de meubles, peinture sur porcelaine, 59113, Seclin';
-    $_GET['canonicalPage'] = '/realisations.php';
+    require_once("functions/seoUtils.php");
+    addMetaValueSeo('Réalisations', 'Retrouvez toutes les réalisations de Bubu Déco : relooking meubles, peinture sur porcelaine...', 'réalisations, Bubu Déco, relooking de meubles, peinture sur porcelaine, 59113, Seclin', '/realisations.html');
     include("components/header.php");
     ?>
 
     <body class="is-loading">
-
         <!-- Wrapper -->
         <div id="wrapper">
-
             <!-- Main -->
             <section id="main">
                 <?php include("components/top.php"); ?>
-
                 <div class="content" id="galleryRea">
                     <h1>Réalisations</h1>
                     <p>Retrouvez en photo toutes les réalisations de Bubu Déco : relooking meubles, peinture et décoration de porcelaine...</p>
@@ -42,14 +37,9 @@
                         </ul>
                     </div>
                 </div>
-
             </section>
-
             <?php include("components/footer.php"); ?>
-
         </div>
-
         <?php include("components/scriptFooter.php"); ?>
-
     </body>
 </html>
