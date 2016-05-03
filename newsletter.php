@@ -1,13 +1,12 @@
-<!DOCTYPE HTML>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-	<?php 
-		$_GET['titlePage'] = 'Inscription newsletter';
-		$_GET['descPage'] = 'N\'hésitez pas à vous inscrire à la newsletter afin d\'en savoir plus sur le relooking de meubles Bubu Déco et la vente d\'objets personnalisés';
-		$_GET['keyPage'] = 'inscription, newsletter, Bubu Déco, objets personnalisés, meubles en bois relookés, décorez votre intérieur, 59113, Seclin';
-		$_GET['canonicalPage'] = '/newsletter.php';
-		include("components/header.php");
-	?>
-	
+<?php 
+	require_once("functions/formUtils.php");
+	require_once("functions/seoUtils.php");
+	addMetaValueSeo('Inscription newsletter', 
+					'N\'hésitez pas à vous inscrire à la newsletter afin d\'en savoir plus sur le relooking de meubles Bubu Déco et la vente d\'objets personnalisés',
+					'inscription, newsletter, Bubu Déco, objets personnalisés, meubles en bois relookés, décorez votre intérieur, 59113, Seclin',
+					'/newsletter.html');
+	include("components/header.php");
+?>
 	<body class="is-loading">
 
 		<!-- Wrapper -->
@@ -21,85 +20,27 @@
 
 
 <?php
-// destinataire est votre adresse mail. Pour envoyer à plusieurs à la fois, séparez-les par une virgule
-$destinataire = 'contact@bubudeco.fr';
-$destinataire2 = 'jcroussel59@gmail.com';
-$destinataire3 = 'brunnhilde.dayez@gmail.com';
- 
 // Messages de confirmation du mail
 $message_envoye = "Votre demande a bien été prise en compte !";
  
 // Message d'erreur du formulaire
 $message_formulaire_invalide = "Vérifiez que tous les champs soient bien remplis<br />et que l'email soit sans erreur.";
-  
-/*
- * cette fonction sert à nettoyer et enregistrer un texte
- */
-function Rec($text,$replaceBr)
-{
-	$text = htmlspecialchars(trim($text), ENT_QUOTES);
-	if (1 === get_magic_quotes_gpc())
-	{
-		$text = stripslashes($text);
-	}
- 
-	if( $replaceBr == true ) {
-		$text = nl2br($text);
-	}
-	return $text;
-};  
-  
-/*
- * Cette fonction sert à vérifier la syntaxe d'un email
- */
-function IsEmail($email)
-{
-	$value = preg_match('/^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9_](?:[a-zA-Z0-9_\-](?!\.)){0,61}[a-zA-Z0-9_-]?\.)+[a-zA-Z0-9_](?:[a-zA-Z0-9_\-](?!$)){0,61}[a-zA-Z0-9_]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/', $email);
-	return (($value === 0) || ($value === false)) ? false : true;
-}
  
 // formulaire envoyé, on récupère tous les champs.
-$nom     = (isset($_POST['nom']))     ? Rec($_POST['nom'],true)     : '';
-$email   = (isset($_POST['email']))   ? Rec($_POST['email'],true)   : '';
-//$ville   = (isset($_POST['ville']))   ? Rec($_POST['ville'],true)   : '';
+$nom     = (isset($_POST['nom']))     ? cleanText($_POST['nom'],true)     : '';
+$email   = (isset($_POST['email']))   ? cleanText($_POST['email'],true)   : '';
  
 // On va vérifier les variables et l'email ...
-$email = (IsEmail($email)) ? $email : ''; // soit l'email est vide si erroné, soit il vaut l'email entré
-$err_formulaire = false; // sert pour remplir le formulaire en cas d'erreur si besoin
+$email = (IsEmail($email)) ? $email : '';
+$err_formulaire = false;
  
-if (isset($_POST['envoi']))
-{
-	if (($nom != '') && ($email != '') )
-	{
-		// les 4 variables sont remplies, on génère puis envoie le mail
-		$headers  = 'From:'.$nom.' <'.$email.'>' . "\r\n";
-		//$headers .= 'Reply-To: '.$email. "\r\n" ;
-		//$headers .= 'X-Mailer:PHP/'.phpversion();
- 
-		$cible = $destinataire.';'.$destinataire2.';'.$destinataire3;
- 
-		// Envoi du mail
-		$num_emails = 0;
-		$tmp = explode(';', $cible);
-		$message = "Une demande d'inscription à la newsletter a été faite !\n\n".$nom."\n".$email;
-		/*foreach($tmp as $email_destinataire)
-		{
-			if (mail($email_destinataire, "Inscription newsletter ".$email, $message, $headers))
-				$num_emails++;
-		}*/
+if (isset($_POST['envoi'])) {
+	if (($nom != '') && ($email != '') ) {
 		
 		$list = array (
 		   array($nom, $email)
 		);
-
-		$fp = fopen('data/newsletter.csv', 'a');
-
-		foreach ($list as $fields) {
-			fputcsv($fp, $fields,";");
-		}
-
-		fclose($fp);
-		
+		writeCsvIntoFile($list,'data/newsletter.csv');
 		
 		echo '<p>'.$message_envoye.'</p>';
 		echo '<a href="/" class="button"><i class="fa fa-angle-right"></i> Retour à l\'accueil</a>';
@@ -113,8 +54,7 @@ if (isset($_POST['envoi']))
 	};
 };
  
-if (($err_formulaire) || (!isset($_POST['envoi'])))
-{
+if (($err_formulaire) || (!isset($_POST['envoi']))) {
 	// afficher le formulaire
 ?>
 

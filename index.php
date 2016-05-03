@@ -1,13 +1,6 @@
 <?php
-	if ( $_SERVER['REQUEST_URI'] == "/index.php" ) {
-		header("Status: 301 Moved Permanently", false, 301);
-		header("Location: http://www.bubudeco.fr/");
-		exit();
-	}
+	include("components/header.php");
 ?>
-<!DOCTYPE HTML>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-	<?php include("components/header.php"); ?>
 	<body class="is-loading">
 		<!-- Wrapper -->
 		<div id="wrapper">
@@ -23,7 +16,7 @@
 					</ul>
 					<p>Le site Bubu Déco est en construction.<br />En attendant, suivez-nous sur Facebook.</p>
 					<ul class="icons">
-						<li><a href="https://www.facebook.com/Bubu-Déco-630107567136751/" title="Facebook" class="fa-facebook">Facebook</a></li>
+						<li><a href="https://www.facebook.com/Bubu-Déco-630107567136751/" title="Facebook" target="_blank" class="fa-facebook">Facebook</a></li>
 						<li><a href="/contact.php" title="Contact" class="fa-envelope">Contact</a></li>
 					</ul>
 					<ul class="real">

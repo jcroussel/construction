@@ -1,5 +1,16 @@
 ErrorDocument 404 /error404.php
 
+#Redirect php extension to HTML extension
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+	
+	RewriteCond %{THE_REQUEST} ^[A-Z]+\s([^\s]+)\.php\s
+	RewriteRule .* %1.html [R=301,L]
+
+	RewriteRule ^(.*)\.html$ $1.php
+</IfModule>
+
 ## contrôle du cache navigateur - Expire headers
 <IfModule mod_expires.c>
 	ExpiresActive On

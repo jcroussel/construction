@@ -1,11 +1,11 @@
-<!DOCTYPE HTML>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-	<?php 
-		$_GET['titlePage'] = 'Réseaux sociaux Facebook';
-		$_GET['descPage'] = 'Retrouvez Bubu Déco sur les différents réseaux sociaux afin de suivre l\'actualité de la boutique de décoration';
-		$_GET['keyPage'] = 'réseaux sociaux, facebook, décoration, Bubu Déco';
-		$_GET['canonicalPage'] = '/facebook.php';
-		include("components/header.php"); ?>
+<?php 
+	require_once("functions/seoUtils.php");
+	addMetaValueSeo('Réseaux sociaux Facebook', 
+					'Retrouvez Bubu Déco sur les différents réseaux sociaux afin de suivre l\'actualité de la boutique de décoration',
+					'réseaux sociaux, facebook, décoration, Bubu Déco',
+					'/facebook.html');
+	include("components/header.php");
+?>
 	<body class="is-loading">
 
 		<!-- Wrapper -->
