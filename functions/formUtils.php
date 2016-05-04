@@ -5,13 +5,15 @@
  */
 
 function cleanText($text, $replaceBr) {
-    $text = htmlspecialchars(trim($text), ENT_QUOTES);
-    if (1 === get_magic_quotes_gpc()) {
-        $text = stripslashes($text);
-    }
+    if ( !empty($text)) {
+        $text = htmlspecialchars(trim($text), ENT_QUOTES);
+        if (1 === get_magic_quotes_gpc()) {
+            $text = stripslashes($text);
+        }
 
-    if ($replaceBr == true) {
-        $text = nl2br($text);
+        if ($replaceBr == true) {
+            $text = nl2br($text);
+        }
     }
     return $text;
 }

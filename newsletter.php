@@ -39,7 +39,7 @@ include("components/header.php");
                         echo '<p>' . $message_envoye . '</p>';
                         echo '<a href="/" class="button"><i class="fa fa-angle-right"></i> Retour à l\'accueil</a>';
                     } else {
-                        $email = (isset($_POST['email'])) ? Rec($_POST['email']) : '';
+                        $email = (isset($_POST['email'])) ? cleanText($_POST['email'],true) : '';
                         // une des 3 variables (ou plus) est vide ...
                         echo '<p class=\'error\'>' . $message_formulaire_invalide . '</p>';
                         $err_formulaire = true;
