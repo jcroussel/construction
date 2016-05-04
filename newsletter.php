@@ -11,8 +11,9 @@ include("components/header.php");
         <!-- Main -->
         <section id="main">
             <?php include("components/top.php"); ?>
-            <div>
-
+            <div class="content">
+                <h1>Inscription à la newsletter</h1>
+                <p>Inscrivez-vous dès maintenant pour profiter prochainement de la newsletter et être informé de l'avancement du projet Bubu Déco.</p>
                 <?php
                 // Messages de confirmation du mail
                 $message_envoye = "Votre demande a bien été prise en compte !";
@@ -51,7 +52,6 @@ include("components/header.php");
                     ?>
 
                     <form id="contact" method="post" action="">
-                        <h2>Inscrivez-vous dès maintenant pour profiter prochainement de la newsletter Bubu Déco.</h2>
                         <p class="mentions">(* Champs obligatoires)</p>
                         <fieldset>
                             <p><input type="text" id="nom" name="nom" tabindex="1" placeholder="Votre nom*" value="<?php echo $nom; ?>" /></p>

@@ -12,7 +12,7 @@ include("components/header.php");
             <?php include("components/top.php"); ?>
             <div class="content" id="galleryRea">
                 <h1>Réalisations</h1>
-                <p>Retrouvez en photo toutes les réalisations de Bubu Déco : relooking meubles, peinture et décoration de porcelaine...</p>
+                <p>Retrouvez en photo les réalisations de Bubu Déco : relooking meubles, peinture et décoration de porcelaine...</p>
 
                 <div class="row">
                     <h3>Relooking meubles</h3>

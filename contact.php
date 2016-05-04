@@ -11,7 +11,8 @@ include("components/header.php");
         <!-- Main -->
         <section id="main">
             <?php include("components/top.php"); ?>
-            <div>
+            <div class="content">
+                <h1>Contact</h1>
                 <?php
                 $destinataire = 'contact@bubudeco.fr';
                 $destinataire2 = 'jcroussel59@gmail.com';
