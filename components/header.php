@@ -16,7 +16,7 @@ $keywords = 'Bubu Déco, objets personnalisés, vaisselles en porcelaine, verres
 if (isset($_GET['keyPage'])) {
     $keywords = $_GET['keyPage'];
 }
-$canonical = '';
+$canonical = '/';
 if (isset($_GET['canonicalPage'])) {
     $canonical = $_GET['canonicalPage'];
 }
