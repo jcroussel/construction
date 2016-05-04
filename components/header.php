@@ -36,7 +36,7 @@ if (isset($_GET['canonicalPage'])) {
         <link rel="shortcut icon" type="image/x-icon" media="all" href="images/favicon.ico" />
         <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css?20160504" />
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
         <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
@@ -44,6 +44,6 @@ if (isset($_GET['canonicalPage'])) {
         <!-- Add fancyBox main JS and CSS files -->
         <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
         <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" media="screen" />
-        <script src="js/functions.js"></script>
+        <script src="js/functions.js?20160504"></script>
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
     </head>
