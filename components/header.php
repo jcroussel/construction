@@ -4,9 +4,9 @@ if ($_SERVER['REQUEST_URI'] == "/index.php" || $_SERVER['REQUEST_URI'] == "/inde
     header("Location: http://" . $_SERVER['HTTP_HOST']);
     exit();
 }
-$title = 'Relooking meubles et objets personnalisés';
+$title = 'Relooking meubles et objets personnalisés - Bubu Déco';
 if (isset($_GET['titlePage'])) {
-    $title = $_GET['titlePage'];
+    $title = $_GET['titlePage'] . " - Bubu Déco";
 }
 $desc = 'Bubu Déco vous propose des objets personnalisés : vaisselles en porcelaine, verres et de décorer votre intérieur avec les meubles relookés par Bubu Déco (59113, Seclin)';
 if (isset($_GET['descPage'])) {
@@ -20,11 +20,16 @@ $canonical = '/';
 if (isset($_GET['canonicalPage'])) {
     $canonical = $_GET['canonicalPage'];
 }
+$arrayOG = array();
+if (isset($_GET['arrayOG'])) {
+    $arrayOG = $_GET['arrayOG'];
+}
+array_push($arrayOG, "/images/bubu-deco.jpg");
 ?>
 <!DOCTYPE HTML>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#">
     <head>
-        <title><?php echo $title ?> - Bubu Déco</title>
+        <title><?php echo $title ?></title>
         <meta name="charset" content="utf-8"/>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0" />
@@ -45,5 +50,12 @@ if (isset($_GET['canonicalPage'])) {
         <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
         <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" media="screen" />
         <script src="js/functions.js?20160504"></script>
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css' />
+
+        <meta property="og:url" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>" /> 
+        <meta property="og:title" content="<?php echo $title ?>" /> 
+        <meta property="og:description" content="<?php echo $desc ?>" />
+        <?php foreach ($arrayOG as $value) { ?>
+            <meta property="og:image" content="<?php echo "http://" . $_SERVER['HTTP_HOST'].$value ?>" />
+        <?php } ?>
     </head>

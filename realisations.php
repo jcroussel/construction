@@ -1,6 +1,18 @@
 <?php
 require_once("functions/seoUtils.php");
-addMetaValueSeo('Réalisations', 'Retrouvez toutes les réalisations de Bubu Déco : relooking meubles, peinture sur porcelaine...', 'réalisations, Bubu Déco, relooking de meubles, peinture sur porcelaine, 59113, Seclin', '/realisations.html');
+//Add image in opengraph
+$imageForOpenGraph = array(
+    "/images/zoom/150010-z.jpg",
+    "/images/zoom/150011-z.jpg",
+    "/images/zoom/150012-z.jpg",
+    "/images/zoom/110010c-z.jpg",
+    "/images/zoom/110010z-z.jpg",
+    "/images/zoom/110011-z.jpg",
+    "/images/zoom/110013-z.jpg",
+    "/images/zoom/160010f-z.jpg",
+    "/images/zoom/160010z-z.jpg",
+);
+addMetaValueSeo('Réalisations et relooking meubles', 'Retrouvez toutes les réalisations de Bubu Déco : relooking meubles, peinture sur porcelaine...', 'réalisations, Bubu Déco, relooking de meubles, peinture sur porcelaine, 59113, Seclin', '/realisations.html', $imageForOpenGraph);
 include("components/header.php");
 ?>
 
@@ -13,7 +25,6 @@ include("components/header.php");
             <div class="content" id="galleryRea">
                 <h1>Réalisations</h1>
                 <p>Retrouvez en photo les réalisations de Bubu Déco : relooking meubles, peinture et décoration de porcelaine...</p>
-
                 <div class="row">
                     <h3>Relooking meubles</h3>
                     <ul class="fancybox gallery">
