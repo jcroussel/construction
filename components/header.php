@@ -37,7 +37,7 @@ array_push($arrayOG, "/images/bubu-deco.jpg");
         <meta name="keywords" content="<?php echo $keywords ?>" />
         <link rel="canonical" href="<?php echo "http://" . $_SERVER['HTTP_HOST'] . $canonical ?>" />
         <meta content="index,follow" name="robots" />
-        <link rel="alternate" hreflang="fr" href="<?php echo "http://" . $_SERVER['HTTP_HOST'] ?>" />
+        <link rel="alternate" hreflang="fr" href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>" />
         <link rel="shortcut icon" type="image/x-icon" media="all" href="images/favicon.ico" />
         <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
